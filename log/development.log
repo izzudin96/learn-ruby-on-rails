@@ -1,0 +1,406 @@
+Started GET "/" for 127.0.0.1 at 2024-07-10 10:39:06 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/falcon/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/falcon/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.0.8.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 633)
+Completed 200 OK in 9ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 7377)
+
+
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWhales (20240710193146)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "whales" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "facts" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240710193146"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-07-10 19:46:37.984200"], ["updated_at", "2024-07-10 19:46:37.984200"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-07-10 13:46:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.1ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1488)
+  Rendered layout layouts/application.html.erb (Duration: 148.2ms | Allocations: 79828)
+Completed 200 OK in 153ms (Views: 149.2ms | ActiveRecord: 0.1ms | Allocations: 84491)
+
+
+Started GET "/whales/new" for 127.0.0.1 at 2024-07-10 13:46:53 -0600
+Processing by WhalesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/new.html.erb within layouts/application
+  Rendered whales/_form.html.erb (Duration: 6.5ms | Allocations: 2895)
+  Rendered whales/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 3220)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4522)
+Completed 200 OK in 17ms (Views: 9.0ms | ActiveRecord: 0.4ms | Allocations: 9100)
+
+
+Started POST "/whales" for 127.0.0.1 at 2024-07-10 13:47:04 -0600
+Processing by WhalesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "whale"=>{"name"=>"Falcon", "facts"=>"asesino"}, "commit"=>"Create Whale"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/whales_controller.rb:27:in `block in create'
+  [1m[36mWhale Create (0.2ms)[0m  [1m[32mINSERT INTO "whales" ("name", "facts", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Falcon"], ["facts", "asesino"], ["created_at", "2024-07-10 19:47:04.608571"], ["updated_at", "2024-07-10 19:47:04.608571"]]
+  ↳ app/controllers/whales_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/whales_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/whales/1
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms | Allocations: 3745)
+
+
+Started GET "/whales/1" for 127.0.0.1 at 2024-07-10 13:47:04 -0600
+Processing by WhalesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mWhale Load (0.1ms)[0m  [1m[34mSELECT "whales".* FROM "whales" WHERE "whales"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/whales_controller.rb:63:in `set_whale'
+  Rendering layout layouts/application.html.erb
+  Rendering whales/show.html.erb within layouts/application
+  Rendered whales/_whale.html.erb (Duration: 0.3ms | Allocations: 193)
+  Rendered whales/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1363)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2671)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 5344)
+
+
+Started GET "/whales" for 127.0.0.1 at 2024-07-10 13:47:09 -0600
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.1ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered whales/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 911)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2213)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 2490)
+
+
+Started GET "/whales" for 127.0.0.1 at 2024-07-10 13:47:11 -0600
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.1ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered whales/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 904)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2206)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 2487)
+
+
+Started GET "/whales/1" for 127.0.0.1 at 2024-07-10 13:47:14 -0600
+Processing by WhalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWhale Load (0.1ms)[0m  [1m[34mSELECT "whales".* FROM "whales" WHERE "whales"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/whales_controller.rb:63:in `set_whale'
+  Rendering layout layouts/application.html.erb
+  Rendering whales/show.html.erb within layouts/application
+  Rendered whales/_whale.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered whales/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 560)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1854)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 2625)
+
+
+Started GET "/whales" for 127.0.0.1 at 2024-07-10 13:47:19 -0600
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.1ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered whales/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 895)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2196)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 2472)
+
+
+Started GET "/whales/1" for 127.0.0.1 at 2024-07-10 13:48:59 -0600
+Processing by WhalesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWhale Load (0.1ms)[0m  [1m[34mSELECT "whales".* FROM "whales" WHERE "whales"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/whales_controller.rb:63:in `set_whale'
+  Rendering layout layouts/application.html.erb
+  Rendering whales/show.html.erb within layouts/application
+  Rendered whales/_whale.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered whales/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1856)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 2614)
+
+
+Started DELETE "/whales/1" for 127.0.0.1 at 2024-07-10 13:49:00 -0600
+Processing by WhalesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mWhale Load (0.1ms)[0m  [1m[34mSELECT "whales".* FROM "whales" WHERE "whales"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/whales_controller.rb:63:in `set_whale'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/whales_controller.rb:52:in `destroy'
+  [1m[36mWhale Destroy (0.2ms)[0m  [1m[31mDELETE FROM "whales" WHERE "whales"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/whales_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/whales_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/whales
+Completed 302 Found in 13ms (ActiveRecord: 8.4ms | Allocations: 2560)
+
+
+Started GET "/whales" for 127.0.0.1 at 2024-07-10 13:49:00 -0600
+Processing by WhalesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.1ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 776)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2077)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 2356)
+
+
+Started GET "/" for 192.168.65.1 at 2024-11-27 01:06:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (1.4ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/index.html.erb within layouts/application (Duration: 50.9ms | Allocations: 1665)
+  Rendered layout layouts/application.html.erb (Duration: 991.1ms | Allocations: 79231)
+Completed 200 OK in 1160ms (Views: 1036.3ms | ActiveRecord: 1.4ms | Allocations: 86886)
+
+
+Started GET "/whales/new" for 192.168.65.1 at 2024-11-27 01:06:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/new.html.erb within layouts/application
+  Rendered whales/_form.html.erb (Duration: 38.1ms | Allocations: 2920)
+  Rendered whales/new.html.erb within layouts/application (Duration: 41.7ms | Allocations: 3245)
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 4548)
+Completed 200 OK in 93ms (Views: 53.9ms | ActiveRecord: 4.4ms | Allocations: 9334)
+
+
+Started POST "/whales" for 192.168.65.1 at 2024-11-27 01:06:14 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "whale"=>{"name"=>"asd", "facts"=>"asd"}, "commit"=>"Create Whale"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/whales_controller.rb:27:in `block in create'
+  [1m[36mWhale Create (4.5ms)[0m  [1m[32mINSERT INTO "whales" ("name", "facts", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "asd"], ["facts", "asd"], ["created_at", "2024-11-27 01:06:14.304941"], ["updated_at", "2024-11-27 01:06:14.304941"]]
+  ↳ app/controllers/whales_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/whales_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/whales/2
+Completed 302 Found in 30ms (ActiveRecord: 10.0ms | Allocations: 3698)
+
+
+Started GET "/whales/2" for 192.168.65.1 at 2024-11-27 01:06:14 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mWhale Load (0.9ms)[0m  [1m[34mSELECT "whales".* FROM "whales" WHERE "whales"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/whales_controller.rb:63:in `set_whale'
+  Rendering layout layouts/application.html.erb
+  Rendering whales/show.html.erb within layouts/application
+  Rendered whales/_whale.html.erb (Duration: 2.6ms | Allocations: 193)
+  Rendered whales/show.html.erb within layouts/application (Duration: 17.0ms | Allocations: 1417)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 2712)
+Completed 200 OK in 51ms (Views: 31.9ms | ActiveRecord: 0.9ms | Allocations: 5772)
+
+
+Started DELETE "/whales/2" for 192.168.65.1 at 2024-11-27 01:06:17 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mWhale Load (2.3ms)[0m  [1m[34mSELECT "whales".* FROM "whales" WHERE "whales"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/whales_controller.rb:63:in `set_whale'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/whales_controller.rb:52:in `destroy'
+  [1m[36mWhale Destroy (7.4ms)[0m  [1m[31mDELETE FROM "whales" WHERE "whales"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/whales_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (28.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/whales_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/whales
+Completed 302 Found in 101ms (ActiveRecord: 38.5ms | Allocations: 2540)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:06:17 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (6.5ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/index.html.erb within layouts/application (Duration: 17.0ms | Allocations: 779)
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | Allocations: 2081)
+Completed 200 OK in 65ms (Views: 52.9ms | ActiveRecord: 6.5ms | Allocations: 2361)
+
+
+Started GET "/whales/new" for 192.168.65.1 at 2024-11-27 01:06:18 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/new.html.erb within layouts/application
+  Rendered whales/_form.html.erb (Duration: 3.7ms | Allocations: 998)
+  Rendered whales/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1087)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 2389)
+Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 2672)
+
+
+Started POST "/whales" for 192.168.65.1 at 2024-11-27 01:06:20 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "whale"=>{"name"=>"asd", "facts"=>"asd"}, "commit"=>"Create Whale"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/whales_controller.rb:27:in `block in create'
+  [1m[36mWhale Create (9.6ms)[0m  [1m[32mINSERT INTO "whales" ("name", "facts", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "asd"], ["facts", "asd"], ["created_at", "2024-11-27 01:06:20.122894"], ["updated_at", "2024-11-27 01:06:20.122894"]]
+  ↳ app/controllers/whales_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (24.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/whales_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/whales/3
+Completed 302 Found in 60ms (ActiveRecord: 34.5ms | Allocations: 2271)
+
+
+Started GET "/whales/3" for 192.168.65.1 at 2024-11-27 01:06:20 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mWhale Load (0.9ms)[0m  [1m[34mSELECT "whales".* FROM "whales" WHERE "whales"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/whales_controller.rb:63:in `set_whale'
+  Rendering layout layouts/application.html.erb
+  Rendering whales/show.html.erb within layouts/application
+  Rendered whales/_whale.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered whales/show.html.erb within layouts/application (Duration: 14.3ms | Allocations: 645)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 1952)
+Completed 200 OK in 43ms (Views: 29.7ms | ActiveRecord: 0.9ms | Allocations: 2695)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:06:22 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (1.6ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 0.3ms | Allocations: 19)
+  Rendered whales/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 921)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 2228)
+Completed 200 OK in 52ms (Views: 44.5ms | ActiveRecord: 1.6ms | Allocations: 2504)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:07:21 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:07:21 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WhalesController#index as HTML
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (1.3ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  [1m[36mWhale Load (0.6ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 1.1ms | Allocations: 245)
+  Rendered whales/_whale.html.erb (Duration: 1.2ms | Allocations: 281)
+  Rendered whales/index.html.erb within layouts/application (Duration: 36.7ms | Allocations: 7742)
+  Rendered whales/index.html.erb within layouts/application (Duration: 33.7ms | Allocations: 7465)
+  Rendered layout layouts/application.html.erb (Duration: 331.6ms | Allocations: 59596)
+Completed 200 OK in 401ms (Views: 340.0ms | ActiveRecord: 2.1ms | Allocations: 65029)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 339.4ms | Allocations: 65409)
+Completed 200 OK in 415ms (Views: 347.8ms | ActiveRecord: 3.3ms | Allocations: 71339)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:07:23 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.6ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered whales/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 933)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 2235)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.6ms | Allocations: 2515)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:22:34 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.5ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered whales/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1086)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 2388)
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 1.3ms | Allocations: 2668)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:23:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.4ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 1.3ms | Allocations: 179)
+  Rendered whales/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1447)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 3016)
+Completed 200 OK in 22ms (Views: 18.1ms | ActiveRecord: 0.4ms | Allocations: 3872)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:23:06 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.5ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 1.5ms | Allocations: 179)
+  Rendered whales/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1399)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 2967)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 0.5ms | Allocations: 3818)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:23:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.6ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered whales/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 953)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 2254)
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.6ms | Allocations: 2529)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:23:08 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.6ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered whales/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 2221)
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.6ms | Allocations: 2495)
+
+
+Started GET "/whales" for 192.168.65.1 at 2024-11-27 01:23:09 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WhalesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering whales/index.html.erb within layouts/application
+  [1m[36mWhale Load (0.5ms)[0m  [1m[34mSELECT "whales".* FROM "whales"[0m
+  ↳ app/views/whales/index.html.erb:6
+  Rendered whales/_whale.html.erb (Duration: 0.3ms | Allocations: 19)
+  Rendered whales/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 932)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 2248)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.5ms | Allocations: 2523)
+
+
